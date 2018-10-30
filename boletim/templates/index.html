@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Boletim
+{% endblock %}
+
+{% block cabeca %}
+    Boletim
+{% endblock %}
+
+{% block conteudo %}
+<a href="/NovaDisciplina">Nova Disciplina</a>
+<table>
+    <thead>
+    <tr>
+        <th>NOME</th>
+        <th>NOTA 1</th>
+        <th>NOTA 2</th>
+        <th>NOTA 3</th>
+        <th>NOTA 4</th>
+        <th>SITUAÇÃO</th>
+        <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for disc in disciplina %}
+    <tr>
+        <td>{{ disc[1] }}</td>
+        <td>{{ disc[2] }}</td>
+        <td>{{ disc[3] }}</td>
+        <td>{{ disc[4] }}</td>
+        <td>{{ disc[5] }}</td>
+        <td>{{ disc[6] }}</td>
+        <td><a href="">Editar</a> <a href="">Remover</a></td>
+    </tr>
+    {% endfor%}
+    </tbody>
+</table>
+{% endblock %}

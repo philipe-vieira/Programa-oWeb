@@ -1,0 +1,31 @@
+
+</html>
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Boletim - Nova disciplina
+{% endblock %}
+
+{% block cabeca %}
+    Boletim
+{% endblock %}
+
+{% block conteudo %}
+    <form action="/SalvarDisciplina" method="post">
+        <input type="hidden" name="editando" value="{{ editando }}">
+        <input type="hidden" name="cod" value="{{ cod }}">
+        <input type="text" name="nome" value="{{ disc[1] }}" placeholder="Nome da disciplina"><br>
+        <input type="text" name="nota1" value="{{ disc[2] }}" placeholder="Nota 1"><br>
+        <input type="text" name="nota2" value="{{ disc[3] }}" placeholder="Nota 2"><br>
+        <input type="text" name="nota3" value="{{ disc[4] }}" placeholder="Nota 3"><br>
+        <input type="text" name="nota4" value="{{ disc[5] }}" placeholder="Nota 4"><br>
+        <select name="situacao" id=""><br>
+            <option value=""></option>
+            <option value="APROVADO" {% if disc[6] =='APROVADO' %} selected {% endif %}>APROVADO</option>
+            <option value="REPROVADO" {% if disc[6] =='REPROVADO' %} selected {% endif %}>REPROVADO</option>
+            <option value="CURSANDO" {% if disc[6]  =='CURSANDO' %} selected {% endif %}>CURSANDO</option>
+        </select><br>
+
+        <input type="submit" name="ENVIAR">
+    </form>
+{% endblock %}
