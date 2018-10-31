@@ -15,10 +15,10 @@
         <input type="hidden" name="editando" value="{{ editando }}">
         <input type="hidden" name="cod" value="{{ cod }}">
         <input type="text" name="nome" value="{{ disc[1] }}" placeholder="Nome da disciplina"><br>
-        <input type="text" name="nota1" value="{{ disc[2] }}" placeholder="Nota 1"><br>
-        <input type="text" name="nota2" value="{{ disc[3] }}" placeholder="Nota 2"><br>
-        <input type="text" name="nota3" value="{{ disc[4] }}" placeholder="Nota 3"><br>
-        <input type="text" name="nota4" value="{{ disc[5] }}" placeholder="Nota 4"><br>
+        <input type="text" name="nota1" value="{% if disc[2] != None %} {{ disc[2] }} {% endif %}" placeholder="Nota 1"><br>
+        <input type="text" name="nota2" value="{% if disc[3] != None %} {{ disc[3] }} {% endif %}" placeholder="Nota 2"><br>
+        <input type="text" name="nota3" value="{% if disc[4] != None %} {{ disc[4] }} {% endif %}" placeholder="Nota 3"><br>
+        <input type="text" name="nota4" value="{% if disc[5] != None %} {{ disc[5] }} {% endif %}" placeholder="Nota 4"><br>
         <select name="situacao" id=""><br>
             <option value=""></option>
             <option value="APROVADO" {% if disc[6] =='APROVADO' %} selected {% endif %}>APROVADO</option>

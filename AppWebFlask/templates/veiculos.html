@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Veiculos</title>
+</head>
+<body>
+    <a href="/NovoVeiculo">Adicionar novo veiculo.</a>
+    <h1>Veiculos do BD</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>Ano</td>
+                <td>Cor</td>
+                <td>Opções</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for carro in carros %}
+            <tr>
+                <td>{{ carro[0] }}</td>
+                <td>{{ carro[1] }}</td>
+                <td>{{ carro[2] }}</td>
+                <td><a href="/EditarVeiculo/{{ carro[0] }}">editar</a> | <a href="/RemoverVeiculo/{{ carro[0] }}">Remover</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

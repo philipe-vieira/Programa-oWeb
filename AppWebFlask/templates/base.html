@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3 style="color: red;">
+        {% for msg in get_flashed_messages() %}
+            {{ msg }}
+        {% endfor %}
+
+    </h3>
+    <h1>Site da turma 404</h1>
+
+    <ul>
+        <li><a href="/home/1">Home</a></li>
+        <li><a href="/informacao/2">Quem somos?</a></li>
+        <li><a href="/profissionais">Sobre</a></li>
+        {% if 'username' in session %}
+        <li>Logado: {{ session['username'] }} <a href="/logout">Sair</a></li>
+        {% else %}
+        <li><a href="/login">Entrar</a></li>
+        {% endif %}
+    </ul>
+
+    {% block conteudo %}
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Veiculos</title>
+</head>
+<body>
+    <h1>Veiculos do BD</h1>
+
+    <form action="/SalvarVeiculo?editando={{ editando }}" method="post">
+        <input type="hidden" name="editando" value="{{ editando }}">
+        <input type="text" name="nome_veiculo" value="{{ carro[0] }}" placeholder="Nome do veiculo"><br>
+        <input type="number" name="ano_veiculo" value="{{ carro[1] }}" placeholder="Ano do veiculo"><br>
+        <select name="cor_veiculo" id=""><br>
+            <option value="AZUL" {% if carro[2] =='AZUL' %} selected {% endif %}>AZUL</option>
+            <option value="BRANCO" {% if carro[2] =='BRANCO' %} selected {% endif %}>BRANCO</option>
+            <option value="VERMELHO" {% if carro[2]  =='VERMELHO' %} selected {% endif %}>VERMELHO</option>
+        </select><br>
+
+        <input type="submit" name="Cadastrar">
+    </form>
+</body>
+</html>
